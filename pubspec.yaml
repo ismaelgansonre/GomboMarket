@@ -57,6 +57,12 @@ flutter:
      - images/C.jpeg
      - images/D.jpeg
      - images/E.jpeg
+     - images/png/cap.png
+     - images/png/dress.png
+     - images/png/pants.png
+     - images/png/shoe.png
+     - images/png/suit.png
+     - images/png/watch.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

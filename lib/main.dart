@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'lib.dart';
 import 'package:carousel_pro/carousel_pro.dart';
-
+import 'componets/Horizontal_listview.dart';
 //le programme commence ici
 void main(){
   runApp(
@@ -62,7 +62,7 @@ Widget image_carousel=new Container(
               ),
             ),
             decoration: new BoxDecoration(
-              color: Colors.lightGreen ),
+              color: Colors.green ),
             ),
             // Body
             InkWell(
@@ -126,7 +126,16 @@ Widget image_carousel=new Container(
       ),
       body: new ListView(
         children:<Widget> [
-          image_carousel
+          //image carousel begins here
+          image_carousel,
+          //padding widget
+          new Padding(padding: const EdgeInsets.all(8.0),
+          child: new Text('Categories'),),
+
+          // Horizontal List view started here
+          HorizontalList(),
+
+
         ],
       ),
     );
