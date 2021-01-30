@@ -9,14 +9,15 @@ class HorizontalList extends StatelessWidget {
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
-Category(
+
+          Category(
   image_location: 'images/png/cap.png',
   image_caption: 'Chapeaux',
 
 ),
           Category(
             image_location: 'images/png/shoe.png',
-            image_caption: 'Chaussures',
+            image_caption: 'Botte',
 
           ),
           Category(
@@ -24,6 +25,22 @@ Category(
             image_caption: 'Costumes',
 
           ),
+          Category(
+            image_location: 'images/png/dress.png',
+            image_caption: 'Robes',
+
+          ),
+          Category(
+            image_location: 'images/png/watch.png',
+            image_caption: 'Montres',
+
+          ),
+          Category(
+            image_location: 'images/png/pants.png',
+            image_caption: 'Pants',
+
+          ),
+
         ],
       ),
     );
@@ -34,11 +51,15 @@ Category(
 
 class Category extends StatelessWidget {
 
+  // ignore: non_constant_identifier_names
   final String image_location;
+  // ignore: non_constant_identifier_names
   final String image_caption;
 
   Category({
+    // ignore: non_constant_identifier_names
     this.image_caption,
+    // ignore: non_constant_identifier_names
     this.image_location
   });
 
@@ -57,7 +78,7 @@ class Category extends StatelessWidget {
       height:80.0,),
       subtitle: Container(
         alignment: Alignment.topCenter,
-        child: Text(image_caption),
+        child: Text(image_caption,style: new TextStyle(fontSize: 9.0),),
       ),
     ),
     ),

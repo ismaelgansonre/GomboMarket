@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
-import 'lib.dart';
+
 import 'package:carousel_pro/carousel_pro.dart';
 import 'componets/Horizontal_listview.dart';
+import 'componets/Produits.dart';
 //le programme commence ici
 void main(){
   runApp(
       MaterialApp(
-        debugShowCheckedModeBanner: false,
+        debugShowCheckedModeBanner: true,
     home:HomePage (),
       )
 
@@ -21,7 +22,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage>{
   @override
   Widget build(BuildContext context) {
-Widget image_carousel=new Container(
+Widget imageCarousel=new Container(
  height: 200.0,
   child: new Carousel(
     boxFit: BoxFit.cover,
@@ -31,7 +32,7 @@ Widget image_carousel=new Container(
       AssetImage('images/E.jpeg'),
 
     ],
-    autoplay: false,
+    autoplay: true,
     animationCurve: Curves.fastOutSlowIn,
     animationDuration: Duration(microseconds: 100),
 
@@ -127,7 +128,7 @@ Widget image_carousel=new Container(
       body: new ListView(
         children:<Widget> [
           //image carousel begins here
-          image_carousel,
+          imageCarousel,
           //padding widget
           new Padding(padding: const EdgeInsets.all(8.0),
           child: new Text('Categories'),),
@@ -135,11 +136,18 @@ Widget image_carousel=new Container(
           // Horizontal List view started here
           HorizontalList(),
 
+// padding widget
+        new Padding(padding: const EdgeInsets.all(20.0),
+        child: new Text('Produits Recent'),),
 
+          //Grid view
+          Container(
+            height:320.0,
+            child: Produits(),
+          )
         ],
       ),
     );
-    // TODO: implement build
-    throw UnimplementedError();
+
   }
 }
