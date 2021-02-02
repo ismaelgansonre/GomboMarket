@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-
+import 'package:flutter_ecom/pages/produits_details.dart';
 
 class HorizontalList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 80.0,
+      height: 120.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: <Widget>[
@@ -69,7 +69,8 @@ class Category extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(padding: const EdgeInsets.all(2.0),
-    child: InkWell(onTap: (){},
+    child: InkWell(onTap: ()
+    => Navigator.of(context).push(new MaterialPageRoute(builder:(context) => new ProductsDetails())),
     child: Container(
     width: 100.0,
     child: ListTile(
