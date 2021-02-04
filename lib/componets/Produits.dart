@@ -15,11 +15,37 @@ class _ProduitsState extends State<Produits> {
       "price":95,
     },
 
-    { "name":"Costume Vlisco 3",
-      "picture":"images/produits/3.jpg",
+    { "name":"Costume Vlisco 2",
+      "picture":"images/produits/2.jpg",
       "old_price": 140,
       "price":99,
-    }
+    },
+    { "name":"Costume Vlisco 3",
+      "picture":"images/produits/3.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+    { "name":"Costume Vlisco 4",
+      "picture":"images/produits/4.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+    { "name":"Costume Vlisco 5",
+      "picture":"images/produits/5.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+    { "name":"Costume Vlisco 6",
+      "picture":"images/produits/6.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+    { "name":"Costume Vlisco 7",
+      "picture":"images/produits/7.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+
 
 ];
   @override
@@ -65,25 +91,12 @@ class Single_produit extends StatelessWidget {
             produit_detail_picture: prod_picture,))),
             child: GridTile(
                 footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      prod_name,
-                      style: TextStyle(fontWeight: FontWeight.normal),
-
+                  color: Colors.white,
+                  child: new Row(children: <Widget>[
+                    Expanded(child: Text(prod_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0),),
                     ),
-                    title: Text(
-                      "\ $prod_price ",
-                      style: TextStyle(
-                          color: Colors.red, fontWeight: FontWeight.normal),
-                    ),
-                    subtitle: Text(
-                      "\ $prod_old_price ",
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.w600,
-                          decoration: TextDecoration.lineThrough),
-                    ),
-                  ),
+                    new Text ("\$${prod_price}",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),)
+                  ],)
                 ),
                 child: Image.asset(
                   prod_picture,
