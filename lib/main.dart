@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:carousel_pro/carousel_pro.dart';
 import 'componets/Horizontal_listview.dart';
 import 'componets/Produits.dart';
+import 'package:flutter_ecom/pages/panier.dart';
 //le programme commence ici
 void main(){
   runApp(
@@ -33,9 +34,11 @@ Widget imageCarousel=new Container(
 
     ],
     autoplay: true,
-    animationCurve: Curves.fastOutSlowIn,
-    animationDuration: Duration(microseconds: 100),
-
+  //  animationCurve: Curves.fastOutSlowIn,
+   // animationDuration: Duration(microseconds: 100),
+dotSize: 4.0,
+    indicatorBgPadding: 2.0,
+dotBgColor: Colors.transparent,
   ),
 );
     return Scaffold(
@@ -44,8 +47,9 @@ Widget imageCarousel=new Container(
         backgroundColor: Colors.lightGreen,
         title: Text('GomboMarket'),
         actions: <Widget>[
-          new IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: (){}),
-          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), onPressed: (){})
+          new IconButton(icon: Icon(Icons.search, color: Colors.white,), onPressed: (){
+          }),
+          new IconButton(icon: Icon(Icons.shopping_cart, color: Colors.white,), onPressed: (){ Navigator.push(context,MaterialPageRoute(builder:(context)=> new Panier()));})
 
 
         ],
@@ -70,7 +74,7 @@ Widget imageCarousel=new Container(
               onTap: (){},
               child: ListTile(
                 title: Text('Accueil'),
-                leading: Icon(Icons.home),
+                leading: Icon(Icons.home,color:Colors.red,),
               ),
 
             ),
@@ -78,7 +82,7 @@ Widget imageCarousel=new Container(
               onTap: (){},
               child: ListTile(
                 title: Text('Mon Compte'),
-                leading: Icon(Icons.person),
+                leading: Icon(Icons.person,color:Colors.red,),
               ),
 
             ),
@@ -86,22 +90,22 @@ Widget imageCarousel=new Container(
               onTap: (){},
               child: ListTile(
                 title: Text('Mes Commandes'),
-                leading: Icon(Icons.shopping_basket),
+                leading: Icon(Icons.shopping_basket,color:Colors.red,),
               ),
 
             ),
             InkWell(
-              onTap: (){},
+              onTap: (){ Navigator.push(context,MaterialPageRoute(builder:(context)=> new Panier()));},
               child: ListTile(
-                title: Text('Catalogue'),
-                leading: Icon(Icons.dashboard),
+                title: Text('Mon panier'),
+                leading: Icon(Icons.shopping_cart,color:Colors.red,),
               ),
 
             ), InkWell(
               onTap: (){},
               child: ListTile(
                 title: Text('Favoris'),
-                leading: Icon(Icons.favorite),
+                leading: Icon(Icons.favorite,color:Colors.red,),
               ),
 
             ),
@@ -110,7 +114,7 @@ Widget imageCarousel=new Container(
               onTap: (){},
               child: ListTile(
                 title: Text('Parametres'),
-                leading: Icon(Icons.settings, color: Colors.purple,),
+                leading: Icon(Icons.settings, ),
               ),
 
             ),
@@ -118,7 +122,7 @@ Widget imageCarousel=new Container(
               onTap: (){},
               child: ListTile(
                 title: Text('A Propos'),
-                leading: Icon(Icons.help, color: Colors.blue,),
+                leading: Icon(Icons.help,),
               ),
 
             ),

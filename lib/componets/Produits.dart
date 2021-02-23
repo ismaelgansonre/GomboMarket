@@ -80,7 +80,8 @@ class Single_produit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Hero(tag: prod_name,
+      child:Hero(
+        tag: new Text("hero 1"),
           child: Material
             (child: InkWell(
             onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ProductsDetails(
@@ -103,7 +104,9 @@ class Single_produit extends StatelessWidget {
                   fit: BoxFit.cover,
                 )),
           ),
+
           )),
-    );
+     );
+
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import'package:flutter_ecom/main.dart';
 class ProductsDetails extends StatefulWidget {
   final produit_detail_nom;
   final produit_detail_new_price;
@@ -17,7 +18,9 @@ class _ProductsDetailsState extends State<ProductsDetails> {
       appBar: new AppBar(
         elevation: 0.1,
         backgroundColor: Colors.lightGreen,
-        title: Text('GomboMarket'),
+        title: InkWell(
+          onTap:(){Navigator.push(context,MaterialPageRoute(builder:(context)=> new HomePage()));},
+           child: Text('GomboMarket')),
         actions: <Widget>[
           new IconButton(
               icon: Icon
@@ -25,14 +28,7 @@ class _ProductsDetailsState extends State<ProductsDetails> {
                 color: Colors.white,
               ), onPressed: ()
           {}),
-          new IconButton(icon: Icon
-            (Icons.shopping_cart,
-            color: Colors.white,
-          ), onPressed: ()
-          {})
-
-
-        ],
+         ],
       ),
       body: new ListView(
         children: <Widget>[
@@ -225,9 +221,116 @@ Divider(),
             Padding(padding: EdgeInsets.all(5.0),
               child: new Text("NEUF"),)
    ],
-    )
+    ),
+Divider(),
+Padding(
+  padding: const EdgeInsets.all(8.0),
+  child: new Text("Produits Similaire"),
+),
+// PRODUIT SIMILAIRE
+Container(
+height:360.0,
+  child:Produits_Similaire(),
+
+
+)
+
     ],
     ),
     );
 }
 }
+
+class  Produits_Similaire extends StatefulWidget {
+  @override
+  _Produits_Similaire createState() =>  _Produits_Similaire();
+}
+
+class _Produits_Similaire extends State< Produits_Similaire> {
+
+
+  var list_produits=[
+    { "name":"Costume Vlisco 1",
+      "picture":"images/produits/1.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+
+
+    { "name":"Costume Vlisco 6",
+      "picture":"images/produits/6.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+    { "name":"Costume Vlisco 7",
+      "picture":"images/produits/7.jpg",
+      "old_price": 120,
+      "price":95,
+    },
+
+
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+        itemCount: list_produits.length,
+        gridDelegate:new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount:2) ,
+        itemBuilder:(BuildContext context, int index)
+        {
+          return Produits_Similaire_prod(
+            prod_name: list_produits[index]['name'],
+            prod_picture:list_produits[index]['picture'] ,
+            prod_old_price:list_produits[index]['old_price'] ,
+            prod_price: list_produits[index]['price'],
+          );
+        });
+  }
+
+}
+class Produits_Similaire_prod extends StatelessWidget {
+  final prod_name;
+  final prod_picture;
+  final prod_old_price;
+  final prod_price;
+
+  Produits_Similaire_prod({
+    this.prod_name,
+    this.prod_old_price,
+    this.prod_picture,
+    this.prod_price,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child:Hero(
+          tag: new Text("hero 1"),
+          child: Material
+            (child: InkWell(
+            onTap: () => Navigator.of(context).push(new MaterialPageRoute(builder: (context)=> new ProductsDetails(
+              //Nous apssons les valeurs des produits vers les details des produits
+              produit_detail_nom:prod_name ,
+              produit_detail_new_price: prod_price,
+              produit_detail_old_price: prod_old_price,
+              produit_detail_picture: prod_picture,))),
+            child: GridTile(
+                footer: Container(
+                    color: Colors.white,
+                    child: new Row(children: <Widget>[
+                      Expanded(child: Text(prod_name,style: TextStyle(fontWeight: FontWeight.bold,fontSize: 16.0),),
+                      ),
+                      new Text ("\$${prod_price}",style: TextStyle(color: Colors.red,fontWeight: FontWeight.bold),)
+                    ],)
+                ),
+                child: Image.asset(
+                  prod_picture,
+                  fit: BoxFit.cover,
+                )),
+          ),
+
+          )),
+    );
+
+  }
+}
+
