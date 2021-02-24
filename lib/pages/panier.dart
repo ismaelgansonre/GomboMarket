@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+// mes importations
+import 'package:flutter_ecom/componets/produits_panier.dart';
 class Panier extends StatefulWidget {
   @override
   _PanierState createState() => _PanierState();
@@ -22,6 +24,9 @@ class _PanierState extends State<Panier> {
 
         ],
       ),
+
+body: new Produits_panier(),
+
 
 bottomNavigationBar: new Container(
   color: Colors.white,
