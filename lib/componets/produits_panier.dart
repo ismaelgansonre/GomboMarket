@@ -79,7 +79,7 @@ class  Produit_panier_seul extends StatelessWidget {
             child:new Text(panier_prod_size),
             ),
 
-            Expanded(child: new Text("color:"),
+            Expanded(child: new Text("Color:"),
 
 
             ),
