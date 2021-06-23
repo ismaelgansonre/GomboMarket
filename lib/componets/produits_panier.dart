@@ -118,8 +118,9 @@ trailing: new Column(
   children: <Widget>[
 
     new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: (){}),
+    new Text("$panier_prod_qty"),
     new IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: (){}),
-    new Text("$panier_prod_qty")
+
 
   ],
 

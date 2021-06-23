@@ -37,7 +37,7 @@ bottomNavigationBar: new Container(
       )),
       Expanded(
         child: new MaterialButton(onPressed: (){},
-          child:new Text("Check out",style :TextStyle(color: Colors.white), ),
+          child:new Text("Passer a la caisse",style :TextStyle(color: Colors.white), ),
           color:Colors.red,),
       )
     ],

@@ -128,26 +128,30 @@ dotBgColor: Colors.transparent,
           ],
         )
       ),
-      body: new ListView(
+      body: new Column(
         children:<Widget> [
           //image carousel begins here
           imageCarousel,
           //padding widget
           new Padding(padding: const EdgeInsets.all(8.0),
-          child: new Text('Categories'),),
+          child: Container(
+              alignment: Alignment.centerLeft,
+
+              child: new Text('Categories')),),
 
           // Horizontal List view started here
           HorizontalList(),
 
 // padding widget
         new Padding(padding: const EdgeInsets.all(20.0),
-        child: new Text('Produits Recent'),),
+        child: Container(
+          alignment: Alignment.centerLeft,
+            child: new Text('Produits Recent')),),
 
           //Grid view
-          Container(
-            height:320.0,
-            child: Produits(),
-          )
+
+            Flexible (child: Produits()),
+
         ],
       ),
     );

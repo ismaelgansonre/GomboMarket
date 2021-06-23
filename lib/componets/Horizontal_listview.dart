@@ -72,7 +72,7 @@ class Category extends StatelessWidget {
     child: InkWell(onTap: ()
     => Navigator.of(context).push(new MaterialPageRoute(builder:(context) => new ProductsDetails())),
     child: Container(
-    width: 100.0,
+    width: 80.0,
     child: ListTile(
       title: Image.asset(image_location,
       width : 100.0,
