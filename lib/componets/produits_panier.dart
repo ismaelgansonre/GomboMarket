@@ -62,7 +62,7 @@ class  Produit_panier_seul extends StatelessWidget {
      this.panier_prod_qty}) ;
 
 
-  @override
+  /*@override
   Widget build(BuildContext context) {
     return Card(
       child:ListTile(
@@ -118,7 +118,6 @@ trailing: new Column(
   children: <Widget>[
 
     new IconButton(icon: Icon(Icons.arrow_drop_up), onPressed: (){}),
-    new Text("$panier_prod_qty"),
     new IconButton(icon: Icon(Icons.arrow_drop_down), onPressed: (){}),
 
 
@@ -128,6 +127,94 @@ trailing: new Column(
         ),
       );
 
+  }*/
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: Container(
+        width: double.infinity,
+        height: 80,
+        child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Expanded(
+                flex: 2,
+                child: Image.asset(panier_prod_picture, width: 50.0, height: 50.0),
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      panier_prod_name,
+                      style: TextStyle(
+                        fontSize: 16.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      "\$${panier_prod_price}",
+                      style: TextStyle(
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black38),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Couleur",
+                    ),
+                    Text(
+                      panier_prod_color,
+
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 3,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "taille",
+                    ),
+                    Text(
+                      panier_prod_size,
+                      style: TextStyle(color: Colors.red),
+                    ),
+                  ],
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: <Widget>[
+                    Expanded(
+                        child: IconButton(
+                            icon: Icon(Icons.arrow_drop_up), onPressed: () {})),
+                    Expanded(
+                        child: IconButton(
+                            icon: Icon(Icons.arrow_drop_down),
+                            onPressed: () {}))
+                  ],
+                ),
+              )
+            ]),
+      ),
+    );
   }
 }
+
 
