@@ -204,6 +204,7 @@ trailing: new Column(
                     Expanded(
                         child: IconButton(
                             icon: Icon(Icons.arrow_drop_up), onPressed: () {})),
+                    new Text("$panier_prod_qty"),
                     Expanded(
                         child: IconButton(
                             icon: Icon(Icons.arrow_drop_down),
@@ -214,7 +215,9 @@ trailing: new Column(
             ]),
       ),
     );
+
   }
+
 }
 
 
