@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1020694859701",
+    "firebase_url": "https://gombo-market-default-rtdb.firebaseio.com",
+    "project_id": "gombo-market",
+    "storage_bucket": "gombo-market.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1020694859701:android:704f72fe98bda4dc9a93fc",
+        "android_client_info": {
+          "package_name": "com.example.flutter_ecom"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1020694859701-84ghe0e6oncqlpmkl284ts9e3674rk72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0comrmqNQAXYErornaJE49eGRJxX6WcQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1020694859701-84ghe0e6oncqlpmkl284ts9e3674rk72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
