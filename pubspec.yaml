@@ -29,6 +29,7 @@ dependencies:
   google_sign_in: ^5.2.1
   shared_preferences: ^2.0.8
   fluttertoast: ^8.0.8
+  firebase_core: ^1.10.0
 
 
 
