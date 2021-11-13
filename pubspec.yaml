@@ -18,19 +18,27 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.1.0 <3.0.0"
 
-dependencies:
-  flutter:
-    sdk: flutter
+dependencies: 
   carousel_pro: ^1.0.0
   firebase_auth: ^3.2.0
-  cloud_firestore: ^3.1.0
-  google_sign_in: ^5.2.1
-  shared_preferences: ^2.0.8
-  fluttertoast: ^8.0.8
-  firebase_core: ^1.10.0
-
+sdk: flutter
+carousel_pro: ^1.0.0
+firebase_auth: ^0.15.3
+google_sign_in: ^4.1.1
+cloud_firestore: ^0.13.2+1
+shared_preferences: ^0.5.6
+fluttertoast: ^3.1.3
+image_picker: ^0.6.2+3
+cached_network_image: ^2.0.0
+intl: ^0.16.0
+firebase_database: ^3.1.1
+provider: ^4.0.1
+firebase_storage: any
+flutter_spinkit: ^5.1.0
+firebase_core: ^5.1.0
+mailer2: ^1.2.5
 
 
 
